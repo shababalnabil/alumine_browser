@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="57dp"
+    android:animateLayoutChanges="true"
+    android:elevation="0dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:animateLayoutChanges="true"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/main_content_toolbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/toolbar_input_background">
+
+            <FrameLayout
+                android:id="@+id/navigationLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="2dp"
+                android:animateLayoutChanges="false"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/reload_button"
+                    android:layout_width="34dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/round_refresh_24" />
+
+                <ImageView
+                    android:id="@+id/stop_button"
+                    android:layout_width="34dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/round_close_24"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="false">
+
+                <ImageView
+                    android:id="@+id/action_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="6dp"
+                    android:animateLayoutChanges="false"
+                    android:padding="2dp"
+                    android:src="@drawable/round_search_24"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+            <View
+                android:id="@+id/divider_icons"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="#86FFFFFF"
+                android:visibility="invisible" />
+
+            <com.inven.alumine.components.toolbar.views.CustomEditText
+                android:id="@+id/customEdittext"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:animateLayoutChanges="true"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/varela_round"
+                android:hint="Enter search or web address"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="6dp"
+                android:paddingEnd="1dp"
+                android:textColor="@color/white"
+                android:textColorHint="#CDFFFFFF"
+                android:textSize="14.5sp" />
+
+            <ImageView
+                android:id="@+id/edittext_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="10dp"
+                android:scaleType="center"
+                android:src="@drawable/round_cancel_24"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/menu_browser"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="10dp"
+            android:src="@drawable/round_more_vert_24" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/progress_bar_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical">
+
+        <com.inven.alumine.components.toolbar.views.ProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="50"
+            android:visibility="gone"
+            app:indicatorColor="#FFFFFF"
+            app:trackColor="@android:color/transparent"
+            app:trackThickness="2dp" />
+
+        <View
+            android:id="@+id/progress_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#000000"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</FrameLayout>

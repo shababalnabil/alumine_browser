@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Alumine</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="normal_error">This page couldn\'t be loaded. It seems there\'s a hiccup in the connection. Please check your internet connection and try again.</string>
+    <string name="blocked_error">Looks like you\'ve encountered restricted content. Alumine is designed for clean and enjoyable browsing experiences. Let\'s keep it that way!</string>
+</resources>

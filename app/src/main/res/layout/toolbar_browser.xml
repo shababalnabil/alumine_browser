@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="57dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:animateLayoutChanges="false"
+        android:id="@+id/main_content_toolbar"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/toolbar_input_background">
+
+        <FrameLayout
+            android:id="@+id/buttons_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:animateLayoutChanges="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/navigationLayout"
+                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/reload_button"
+                    android:layout_width="34dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/round_refresh_24" />
+
+                <ImageView
+                    android:id="@+id/stop_button"
+                    android:visibility="visible"
+                    android:layout_width="34dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:scaleType="center"
+                    android:src="@drawable/round_close_24" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/action_layout"
+                android:padding="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:animateLayoutChanges="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:src="@drawable/round_search_24"
+                    android:layout_marginStart="10dp"
+                    android:visibility="gone"
+                    android:id="@+id/action_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <View
+            app:layout_constraintStart_toEndOf="@+id/buttons_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="invisible"
+            android:id="@+id/divider_icons"
+            android:layout_width="1dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_height="match_parent"
+            android:background="#86FFFFFF" />
+
+            <com.inven.alumine.components.toolbar.views.CustomEditText
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/divider_icons"
+                app:layout_constraintEnd_toStartOf="@id/edittext_clear"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/customEdittext"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/varela_round"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="6dp"
+                android:paddingEnd="8dp"
+                android:textColorHint="#CDFFFFFF"
+                android:hint="Enter search or web address"
+                android:textColor="@color/white"
+                android:textSize="14.5sp" />
+
+        <ImageView
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            android:id="@+id/edittext_clear"
+            android:background="?selectableItemBackgroundBorderless"
+            android:focusable="true"
+            android:clickable="true"
+            android:padding="10dp"
+            android:layout_marginEnd="6dp"
+            android:scaleType="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/round_cancel_24"/>
+
+        <View
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/edittext_fade"
+            android:id="@+id/fade_edge"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/menu_browser"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="?selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="10dp"
+        android:src="@drawable/round_more_vert_24" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_gravity="bottom"
+        android:id="@+id/progress_bar_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.inven.alumine.components.toolbar.views.ProgressIndicator
+            android:id="@+id/progressIndicator"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progress="0"
+            app:indicatorColor="#FFFFFF"
+            app:trackColor="@android:color/transparent"
+            app:trackThickness="2dp" />
+
+        <View
+            android:visibility="gone"
+            android:background="#000000"
+            android:id="@+id/progress_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+    </LinearLayout>
+
+</FrameLayout>
